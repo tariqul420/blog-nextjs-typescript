@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 interface Post {
   id: number;
   title: string;
@@ -17,7 +19,9 @@ export default async function Home() {
             <h2 className="card-title">{post?.title}</h2>
             <p>{post?.body}</p>
             <div className="card-actions justify-start">
-              <button className="btn btn-primary">See Details</button>
+              <Link href={`/blog/${post?.id}`} className="btn btn-primary">
+                See Details
+              </Link>
             </div>
           </div>
         </div>
